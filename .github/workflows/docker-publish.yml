@@ -74,4 +74,6 @@ jobs:
           echo VERSION=$VERSION
 
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker tag $IMAGE_ID:$VERSION docker.pkg.github.com/hashdot/docker-mysql-backup/$IMAGE_NAME
           docker push $IMAGE_ID:$VERSION
+          docker push docker.pkg.github.com/hashdot/docker-mysql-backup/$IMAGE_NAME
